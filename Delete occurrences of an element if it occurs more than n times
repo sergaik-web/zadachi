@@ -1,0 +1,22 @@
+function deleteNth(arr,n){
+  let countNumber = {};
+  for (let i=0; i<arr.length; i++){
+    let a = arr[i];
+    if (countNumber[a] != undefined) {
+      ++countNumber[a];
+    } else {
+      countNumber[a] = 1;
+    };
+  };
+  
+  for (let key in countNumber) {
+    if(countNumber[key]>n) {
+      for (let i=0; i<(countNumber[key]-n); i++){
+        console.log(key);
+        arr.splice(arr.lastIndexOf(Number(key)), 1);
+      }
+    }
+  }
+
+  return arr;
+};
