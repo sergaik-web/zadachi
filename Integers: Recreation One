@@ -1,0 +1,15 @@
+function listSquared(m, n) {
+    let result=[];
+    for (let i = m; i<=n; i++){
+      let sum=0;
+      for(let k=1; k<=i; k++){
+        if (i%k===0){
+          sum+=Math.pow(k,2);
+        }
+      }
+      if(Math.sqrt(sum)%1===0){
+        result.push([i,sum])
+      }
+    }
+    return result
+}
